@@ -383,8 +383,8 @@ p.text-gri {
     font-weight: 500;
 }
 button.btn-imgver {
-    position: absolute;
-    bottom: 445px;
+    position: relative;
+    bottom: 340px;
     left: 120px;
     border: none;
     width: 212px;
@@ -397,9 +397,9 @@ button.btn-imgver {
     cursor: pointer;
 }
 .famili-ha {
-    position: absolute;
+    position: relative;
     width: 150px;
-    bottom: 500px;
+    bottom: 350px;
     color: #fff;
     left: 120px;
     font-size: 35px;
