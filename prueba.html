@@ -6,6 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="prueba.css">   
     <script src="https://kit.fontawesome.com/62ea397d3a.js" crossorigin="anonymous"></script>
+    
 </head>
 <body>
     <header>
@@ -52,102 +53,186 @@
     </div>
     <div class="slider" >
         <figure>
-            <img src="imagenes/OZZBDBA3FZA2HJCKHPDAIV64C4.jpg" alt="">
-            <img src="imagenes/protecc-salud.png" alt="">
-           <img src="imagenes/descarga.jpeg" alt="">           
-           <img src="imagenes/personal-de-salud-pandemia-covid-19.jpg" alt="">
-           <img src="imagenes/Champion_BE49.jpg" alt="">           
+           <img class="slider-fondo" src="imagenes/fondo.jpg" alt="">           
         </figure>
-    </div>
-    <div class="slider-js">
-        <div class="imganes-js">
-            <img src="imagenes/imagenes/31ckbR3PK7L._SL500_.jpg" alt="">
-            <p>Seguridad en el baño</p>
+        <p class="famili-ha"><a class="mas-a" href="">MÁS</a> DE 800MIL FAMILIAS HABILITADAS</p>
+        <button class="btn-imgver">VER PRODUCTOS</button>
+    </div> 
+     
+    <div class="glider-contain">
+        <div class="glider">
+            <div class="imganes-js">
+                <img src="imagenes/31ckbR3PK7L._SL500_.jpg" alt="">
+                <p>Seguridad en el baño</p>
+            </div>
+            <div class="imganes-js">
+                <img src="imagenes/usar-tapabocas.jpg" alt="">
+                <p>Tapabocas</p>
+            </div>
+            <div class="imganes-js">
+                <img src="imagenes/perro92.jpg" alt="">
+                <p>Silla de ruedas</p>
+            </div>
+            <div class="imganes-js">
+                <img src="imagenes/social.jpg" alt="">
+                <p>Ayuda para la marcha</p>
+            </div>
+            <div class="imganes-js">
+                <img src="imagenes/nino-mascara.jpg" alt="">
+                <p>Seguridad en el baño</p>
+            </div>
+            <div class="imganes-js">
+                <img src="imagenes/saludh.jpg" alt="">
+                <p>Salud e higiene</p>
+            </div>
+            <div class="imganes-js">
+                <img src="imagenes/31ckbR3PK7L._SL500_.jpg" alt="">
+                <p>Seguridad en el baño</p>
+            </div>
+            <div class="imganes-js">
+                <img src="imagenes/usar-tapabocas.jpg" alt="">
+                <p>Tapabocas</p>
+            </div>
+            <div class="imganes-js">
+                <img src="imagenes/perro92.jpg" alt="">
+                <p>Silla de ruedas</p>
+            </div>
+            <div class="imganes-js">
+                <img src="imagenes/social.jpg" alt="">
+                <p>Ayuda para la marcha</p>
+            </div>
+            <div class="imganes-js">
+                <img src="imagenes/nino-mascara.jpg" alt="">
+                <p>Seguridad en el baño</p>
+            </div>
+            <div class="imganes-js">
+                <img src="imagenes/saludh.jpg" alt="">
+                <p>Salud e higiene</p>
+            </div>
         </div>
-        <div class="imganes-js">
-            <img src="imagenes/imagenes/usar-tapabocas.jpg" alt="">
-            <p>Tapabocas</p>
-        </div>
-        <div class="imganes-js">
-            <img src="imagenes/perro92.jpg" alt="">
-            <p>Silla de ruedas</p>
-        </div>
-        <div class="imganes-js">
-            <img src="imagenes/social.jpg" alt="">
-            <p>Ayuda para la marcha</p>
-        </div>
-        <div class="imganes-js">
-            <img src="imagenes/nino-mascara.jpg" alt="">
-            <p>Seguridad en el baño</p>
-        </div>
-        <div class="imganes-js">
-            <img src="imagenes/bastones.jpg" alt="">
-            <p>Bastones</p>
-        </div>
-        <div class="imganes-js">
-            <img src="imagenes/saludh.jpg" alt="">
-            <p>Salud e higiene</p>
-        </div>
-        <div class="imganes-js">
-            <img src="imagenes/nino-mascara.jpg" alt="">
-            <p>Seguridad en el baño</p>
-        </div>
-    </div>
+        <div id="dots"></div>
+      </div>
+  
+      <script src="glider.js"></script>
+  
+      <script>
+          window.addEventListener("load", function () {
+            window._ = new Glider(document.querySelector(".glider"), {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              itemWidth: 120,
+              draggable: true,
+              scrollLock: true,
+              dots: false,
+              rewind: true,
+              infinite: true,
+              arrows: false,
+              responsive: [    
+                {
+                  breakpoint: 1045,
+                  settings: {
+                    slidesToScroll: 3,
+                    slidesToShow: 3,
+                  },
+                },
+                {
+                  breakpoint: 1366,
+                  settings: {
+                    slidesToScroll: 6,
+                    slidesToShow: 6,
+                    dots: false,
+                    arrows: false,
+                    scrollLock: true,
+                  },
+                },
+              ],
+            });
+            sliderAuto(window._ , 3000);
+          });
+    
+          function sliderAuto(slider, miliseconds) {
+              console.log(slider)
+            const slidesCount = slider.track.childElementCount;
+            let slideTimeout = null;
+            let nextIndex = 1;
+    
+            function slide() {
+              slideTimeout = setTimeout(function () {
+                if (nextIndex >= slidesCount) {
+                  nextIndex = 0;
+                }
+                slider.scrollItem(nextIndex++);
+              }, miliseconds);
+            }
+    
+            slider.ele.addEventListener("glider-animated", function () {
+              window.clearInterval(slideTimeout);
+              slide();
+            });
+    
+            slide();
+          }
+          
+        </script>
+
+
+
     <div class="nueva-colecion">
         <h2>NUEVA COLECCIÓN</h2>
     </div>
     <div class="colección-imagenes">
         <div class="hover-img">
             <div class="cole-img">
-                <img class="img-sillas" src="imagenes/imagenes/imagenes/K100-13.jpg" alt="">
+                <img class="img-sillas" src="imagenes/K100-13.jpg" alt="">
                 <p>silla de reudas motorizada gris metalizada abatible M2000</p>
                 <button class="btn-carrito">AÑADIR AL CARRITO</button>
             </div>            
         </div>
         <div class="hover-img">
             <div class="cole-img">
-                <img class="img-sillas" src="imagenes/imagenes/imagenes/silla-de-ruedas-m.jpg" alt="">
+                <img class="img-sillas" src="imagenes/silla-de-ruedas-m.jpg" alt="">
                 <p>silla de reudas motorizada gris metalizada abatible M2000</p>
                 <button class="btn-carrito">AÑADIR AL CARRITO</button>
             </div>            
         </div>
         <div class="hover-img">
             <div class="cole-img">
-                <img class="img-sillas" src="imagenes/imagenes/m2000medioperfil.jpg" alt="">
+                <img class="img-sillas" src="imagenes/m2000medioperfil.jpg" alt="">
                 <p>silla de reudas motorizada gris metalizada abatible M2000</p>
                 <button class="btn-carrito">AÑADIR AL CARRITO</button>
             </div>            
         </div>
         <div class="hover-img">
             <div class="cole-img">
-                <img class="img-sillas" src="imagenes/imagenes/moto4.jpg" alt="">
+                <img class="img-sillas" src="imagenes/moto4.jpg" alt="">
                 <p>silla de reudas motorizada gris metalizada abatible M2000</p>
                 <button class="btn-carrito">AÑADIR AL CARRITO</button>
             </div>            
         </div>
     </div>
     <div class="contenedor-grid">
-        <div class="header">
-            <img src="imagenes/imagenes/usar-tapabocas.jpg" alt="">
-        </div>
-        <div class="contenido">
-            <img src="imagenes/imagenes/usar-tapabocas.jpg" alt="">
-        </div>
-        <div class="sidebar">
-            <img src="imagenes/imagenes/usar-tapabocas.jpg" alt="">
-        </div>
-        <div class="widget-1">
-            <img src="imagenes/imagenes/usar-tapabocas.jpg" alt="">
-        </div>
-        <div class="widget-2">
-            <img src="imagenes/usar-tapabocas.jpg" alt="">
-        </div>
-        <div class="footer">
-            <img src="imagenes/usar-tapabocas.jpg" alt="">
+        <div class="conte-grid">
+            <div class="grid">
+                <img class="img-grid n-grid" src="imagenes/images.jpeg" alt="">                
+                <img class="img-grid" src="imagenes/fondo.jpg" alt="">
+                <p class="texto-grid">¿Porqué elegirnos?</p>
+                <p class="tex-grid">Tienda surtida</p>
+                <button class="btn-verp">Conoce mas de nosotros</button>
+            </div>
+            <div class="grid">
+                <img class="img-grid" src="imagenes/fondo.jpg" alt="">
+                <img class="img-grid n-grid" src="imagenes/images.jpeg" alt="">
+                <p class="text-grid">Servicio integral</p>
+                <p class="text-gri">Usuario intersado</p>
+            </div>
+        </div> 
+        <div class="derecha-img">
+            <img class="dere-img" src="imagenes/social.jpg" alt="">
+            <p class="grid-info">Gente informada</p>
         </div>
 
     </div>
-   <div>   
+   <div class="btn-sill-ter-mov">   
 
     <div class="botones-hover">
         <div class="silla">
@@ -160,7 +245,7 @@
             <p class="movi">MOVILIDAD</p>            
         </div>
     </div>
-    <div class="imagen-fondo">
+    <div class="imagen-fondo img-filter">
         <img src="imagenes/fondo.jpg" alt="">
     </div>
     <div class="coleccion-sillas">
@@ -199,16 +284,18 @@
    </div>
     <div class="empresa-complemento">
         <div class="empresa">
-            <img name="slider" class="img-empresa" src="imagenes/pacientes.jpg" alt="">
-            <img name="slider" class="img-empresa" src="imagenes/social.jpg" alt="">
-            <img name="slider" class="img-empresa" src="imagenes/bastones.jpg" alt="">
+            <div class="img-btn">
+                <img class="img-comple" src="imagenes/pacientes.jpg" alt="">
+                <p class="empre-cree">Empresa encrecimiento</p>
+                <button class="btn-ver">VER PRODUCTOS</button>
+            </div>
         </div>
         <div class="complemento">
-            <img class="img-comple" src="imagenes/images.jpeg" alt="">
-            <img class="img-comple" src="imagenes/perro92.jpg" alt="">
-            <img class="img-comple" src="imagenes/m2000medioperfil.jpg" alt="">
-            <img class="img-comple" src="imagenes/nino-mascara.jpg" alt="">
-                     
+            <div class="img-btn">
+                <img class="img-comple" src="imagenes/fondo.jpg" alt="">
+                <p class="empre-cree">Complemento linea de oximetria</p>
+                <button class="btn-ver">VER PRODUCTOS</button>
+            </div>
         </div>
     </div>
     <div class="marcha">
